@@ -87,7 +87,7 @@ export function createNewsletterAudiencesHandler(
         return Response.json(
           {
             data: Array.isArray(list)
-              ? list.map((a) => ({ id: a.id, name: a.name }))
+              ? (list as { id?: string; name?: string }[]).map((a) => ({ id: a.id, name: a.name }))
               : [],
           },
           {

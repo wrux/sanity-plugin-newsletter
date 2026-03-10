@@ -56,7 +56,7 @@ export function NewsletterList({
       error: () => setLoading(false),
     });
     return () => sub.unsubscribe();
-  }, [client, documentType, onListLoaded]);
+  }, [client, documentType, query, onListLoaded]);
 
   const list = Array.isArray(newsletters) ? newsletters : [];
   const schemaType = schema.get(documentType);

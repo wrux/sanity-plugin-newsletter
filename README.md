@@ -1,4 +1,4 @@
-# @wrux/sanity-newsletters
+# sanity-plugin-newsletter
 
 A Sanity plugin for newsletter management with Resend integration. Create and send email campaigns from Sanity Studio with live preview, draft support, and minimal Next.js setup.
 
@@ -21,7 +21,7 @@ A Sanity plugin for newsletter management with Resend integration. Create and se
 ## Installation
 
 ```bash
-npm install @wrux/sanity-newsletters resend
+npm install sanity-plugin-newsletter resend
 # Optional: React Email for building templates (recommended)
 npm install @react-email/render @react-email/components
 ```
@@ -103,7 +103,7 @@ import { structureTool } from 'sanity/structure';
 import {
   newsletterPlugin,
   getNewsletterDefaultDocumentNode,
-} from '@wrux/sanity-newsletters';
+} from 'sanity-plugin-newsletter';
 import {
   newsletterBlockHeading,
   newsletterBlockText,
@@ -291,7 +291,7 @@ This ensures your API has all the necessary fields resolved and shaped for your 
 
 ```ts
 // app/api/newsletters/preview/route.ts
-import { createNewsletterPreviewHandler } from '@wrux/sanity-newsletters/next';
+import { createNewsletterPreviewHandler } from 'sanity-plugin-newsletter/next';
 import { projectId, dataset, apiVersion } from '~/sanity/lib/api';
 import { renderNewsletterToHtml } from '~/lib/render-newsletter-to-html';
 
@@ -315,7 +315,7 @@ export const GET = handler;
 ```ts
 // app/api/newsletters/send/route.ts
 import { NextResponse } from 'next/server';
-import { createNewsletterSendHandler } from '@wrux/sanity-newsletters/next';
+import { createNewsletterSendHandler } from 'sanity-plugin-newsletter/next';
 import { projectId, dataset, apiVersion } from '~/sanity/lib/api';
 import { renderNewsletterToHtml } from '~/lib/render-newsletter-to-html';
 
@@ -350,7 +350,7 @@ export async function OPTIONS() {
 ```ts
 // app/api/newsletters/audiences/route.ts
 import { NextResponse } from 'next/server';
-import { createNewsletterAudiencesHandler } from '@wrux/sanity-newsletters/next';
+import { createNewsletterAudiencesHandler } from 'sanity-plugin-newsletter/next';
 import { projectId, dataset, apiVersion } from '~/sanity/lib/api';
 
 const handler = createNewsletterAudiencesHandler({
