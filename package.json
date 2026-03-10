@@ -1,0 +1,51 @@
+{
+  "name": "@wrux/sanity-newsletters",
+  "version": "0.1.0",
+  "description": "Sanity plugin for newsletter management with Resend integration",
+  "keywords": [
+    "sanity",
+    "sanity-plugin",
+    "newsletter",
+    "resend"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./next": {
+      "types": "./dist/next/index.d.ts",
+      "import": "./dist/next/index.mjs",
+      "require": "./dist/next/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && cp src/next/index.d.ts dist/next/",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "sanity": "^3.0.0 || ^5.0.0",
+    "@sanity/icons": "^2.0.0 || ^3.0.0",
+    "@sanity/ui": "^1.0.0 || ^2.0.0 || ^3.0.0"
+  },
+  "dependencies": {
+    "@sanity/client": "^7.0.0",
+    "resend": "^4.0.0"
+  },
+  "devDependencies": {
+    "@sanity/client": "^7.16.0",
+    "resend": "^4.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
