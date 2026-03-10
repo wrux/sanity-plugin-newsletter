@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "sanity-plugin-newsletter",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Sanity plugin for newsletter management with Resend integration",
   "keywords": [
     "sanity",
@@ -14,19 +14,19 @@
     "type": "git",
     "url": "https://github.com/wrux/sanity-plugin-newsletter"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./next": {
       "types": "./dist/next/index.d.ts",
-      "import": "./dist/next/index.mjs",
-      "require": "./dist/next/index.js"
+      "import": "./dist/next/index.js",
+      "require": "./dist/next/index.cjs"
     }
   },
   "files": [
